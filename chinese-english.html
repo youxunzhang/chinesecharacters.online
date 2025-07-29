@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中英对照 - Chinese-English Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>汉字学习</h1>
+                <span>Chinese Characters</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">游戏</a>
+                </li>
+                <li class="nav-item">
+                    <a href="traditional-simplified.html" class="nav-link">简体繁体</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chinese-english.html" class="nav-link active">中英对照</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calligraphy.html" class="nav-link">书法</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-english">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">中英汉字对照</h1>
+                <p class="hero-subtitle">学习100个常用汉字的英文含义，加深对汉字理解</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dictionary Section -->
+    <section class="dictionary-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>100个常用汉字英译</h2>
+                <p>点击汉字查看详细含义和例句</p>
+            </div>
+            
+            <div class="search-controls">
+                <input type="text" id="searchInput" placeholder="搜索汉字或英文..." class="search-input">
+                <button class="btn btn-primary" onclick="searchCharacters()">搜索</button>
+                <button class="btn btn-secondary" onclick="clearSearch()">清除</button>
+            </div>
+
+            <div class="dictionary-grid" id="dictionaryGrid">
+                <!-- Characters will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Detail Modal -->
+    <div class="modal" id="characterModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="character-detail" id="characterDetail">
+                <!-- Character detail will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Tips Section -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>学习技巧</h2>
+                <p>帮助你更好地记忆和理解汉字</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">📝</div>
+                    <h3>多写多练</h3>
+                    <p>通过反复书写来加深对汉字结构和笔画的记忆</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🔤</div>
+                    <h3>联想记忆</h3>
+                    <p>将汉字的形状与英文含义建立联系，便于记忆</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📚</div>
+                    <h3>语境学习</h3>
+                    <p>在句子和短语中学习汉字，理解其实际用法</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <h3>分类记忆</h3>
+                    <p>按照主题或部首对汉字进行分类，系统化学习</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>汉字学习</h3>
+                    <p>探索中华文化的精髓，通过汉字了解中国</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="games.html">游戏学习</a></li>
+                        <li><a href="traditional-simplified.html">简体繁体</a></li>
+                        <li><a href="calligraphy.html">书法艺术</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p>致力于推广中文学习，让更多人了解汉字文化</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 汉字学习. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

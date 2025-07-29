@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉字书法 - Chinese Calligraphy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>汉字学习</h1>
+                <span>Chinese Characters</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">游戏</a>
+                </li>
+                <li class="nav-item">
+                    <a href="traditional-simplified.html" class="nav-link">简体繁体</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chinese-english.html" class="nav-link">中英对照</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calligraphy.html" class="nav-link active">书法</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-calligraphy">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">汉字书法艺术</h1>
+                <p class="hero-subtitle">欣赏楷书之美，感受汉字书写的艺术魅力</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calligraphy Section -->
+    <section class="calligraphy-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>100个汉字楷书</h2>
+                <p>楷书是汉字的标准字体，结构严谨，笔画清晰</p>
+            </div>
+            
+            <div class="calligraphy-controls">
+                <button class="btn btn-primary" onclick="filterCalligraphy('all')">全部</button>
+                <button class="btn btn-secondary" onclick="filterCalligraphy('basic')">基础笔画</button>
+                <button class="btn btn-secondary" onclick="filterCalligraphy('complex')">复杂结构</button>
+                <button class="btn btn-secondary" onclick="filterCalligraphy('radical')">部首汉字</button>
+            </div>
+
+            <div class="calligraphy-grid" id="calligraphyGrid">
+                <!-- Calligraphy characters will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calligraphy Detail Modal -->
+    <div class="modal" id="calligraphyModal">
+        <div class="modal-content calligraphy-modal">
+            <span class="close" onclick="closeCalligraphyModal()">&times;</span>
+            <div class="calligraphy-detail" id="calligraphyDetail">
+                <!-- Calligraphy detail will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Calligraphy Info Section -->
+    <section class="calligraphy-info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>楷书知识</h2>
+                <p>了解楷书的历史和特点</p>
+            </div>
+            <div class="calligraphy-info-grid">
+                <div class="info-card">
+                    <h3>楷书历史</h3>
+                    <p>楷书起源于东汉末年，由隶书演变而来。经过魏晋南北朝的发展，到唐代达到鼎盛，成为汉字的标准字体。</p>
+                </div>
+                <div class="info-card">
+                    <h3>楷书特点</h3>
+                    <p>楷书结构严谨，笔画清晰，横平竖直，点画分明。每个笔画都有明确的起笔、行笔和收笔。</p>
+                </div>
+                <div class="info-card">
+                    <h3>书写要领</h3>
+                    <p>楷书书写讲究"永字八法"，包括点、横、竖、撇、捺、钩、提、折等基本笔画。</p>
+                </div>
+                <div class="info-card">
+                    <h3>艺术价值</h3>
+                    <p>楷书不仅是实用的书写字体，更是中国书法艺术的重要组成部分，体现了中华文化的审美追求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="practice-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>书法练习</h2>
+                <p>选择汉字进行书法练习</p>
+            </div>
+            <div class="practice-area">
+                <div class="practice-controls">
+                    <button class="btn btn-primary" onclick="startPractice()">开始练习</button>
+                    <button class="btn btn-secondary" onclick="clearPractice()">清除</button>
+                    <button class="btn btn-secondary" onclick="savePractice()">保存</button>
+                </div>
+                <div class="practice-canvas-container">
+                    <canvas id="practiceCanvas" width="400" height="400"></canvas>
+                    <div class="practice-guide">
+                        <p>在画布上练习书写汉字</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>汉字学习</h3>
+                    <p>探索中华文化的精髓，通过汉字了解中国</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="games.html">游戏学习</a></li>
+                        <li><a href="traditional-simplified.html">简体繁体</a></li>
+                        <li><a href="chinese-english.html">中英对照</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p>致力于推广中文学习，让更多人了解汉字文化</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 汉字学习. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
