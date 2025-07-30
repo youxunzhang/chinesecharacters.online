@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简体繁体对照 - Traditional vs Simplified Characters</title>
+    <title>Traditional vs Simplified Characters - Chinese Character Comparison</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,24 +12,24 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>汉字学习</h1>
-                <span>Chinese Characters</span>
+                <h1>Chinese Characters</h1>
+                <span>Learning Platform</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="games.html" class="nav-link">游戏</a>
+                    <a href="games.html" class="nav-link">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a href="traditional-simplified.html" class="nav-link active">简体繁体</a>
+                    <a href="traditional-simplified.html" class="nav-link active">Traditional vs Simplified</a>
                 </li>
                 <li class="nav-item">
-                    <a href="chinese-english.html" class="nav-link">中英对照</a>
+                    <a href="chinese-english.html" class="nav-link">Dictionary</a>
                 </li>
                 <li class="nav-item">
-                    <a href="calligraphy.html" class="nav-link">书法</a>
+                    <a href="calligraphy.html" class="nav-link">Calligraphy</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -44,8 +44,8 @@
     <section class="hero hero-traditional">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">简体字与繁体字</h1>
-                <p class="hero-subtitle">了解汉字的发展演变，对比简体字和繁体字的差异</p>
+                <h1 class="hero-title">Traditional vs Simplified Characters</h1>
+                <p class="hero-subtitle">Understand the evolution of Chinese characters and compare traditional and simplified forms</p>
             </div>
         </div>
     </section>
@@ -54,14 +54,14 @@
     <section class="comparison-section">
         <div class="container">
             <div class="section-header">
-                <h2>100个常用汉字对照</h2>
-                <p>简体字（中国大陆）与繁体字（台湾、香港、澳门）的对比</p>
+                <h2>100 Common Characters Comparison</h2>
+                <p>Simplified characters (Mainland China) vs Traditional characters (Taiwan, Hong Kong, Macau)</p>
             </div>
             
             <div class="comparison-controls">
-                <button class="btn btn-primary" onclick="filterCharacters('all')">全部</button>
-                <button class="btn btn-secondary" onclick="filterCharacters('different')">有差异</button>
-                <button class="btn btn-secondary" onclick="filterCharacters('same')">相同</button>
+                <button class="btn btn-primary" onclick="filterCharacters('all')">All</button>
+                <button class="btn btn-secondary" onclick="filterCharacters('different')">Different</button>
+                <button class="btn btn-secondary" onclick="filterCharacters('same')">Same</button>
             </div>
 
             <div class="comparison-grid" id="comparisonGrid">
@@ -75,16 +75,16 @@
         <div class="container">
             <div class="info-grid">
                 <div class="info-card">
-                    <h3>简体字</h3>
-                    <p>简体字是在1950年代由中国大陆推行的汉字简化方案，目的是提高识字率和书写效率。简体字主要在中华人民共和国大陆地区使用。</p>
+                    <h3>Simplified Characters</h3>
+                    <p>Simplified characters were introduced in the 1950s by mainland China to improve literacy rates and writing efficiency. They are primarily used in mainland China.</p>
                 </div>
                 <div class="info-card">
-                    <h3>繁体字</h3>
-                    <p>繁体字是汉字的传统写法，保留了更多的笔画和结构。繁体字主要在台湾、香港、澳门等地区使用，也被称为正体字。</p>
+                    <h3>Traditional Characters</h3>
+                    <p>Traditional characters preserve more strokes and structure, representing the original form of Chinese characters. They are mainly used in Taiwan, Hong Kong, and Macau, also known as "standard characters."</p>
                 </div>
                 <div class="info-card">
-                    <h3>主要差异</h3>
-                    <p>简体字和繁体字的主要差异包括：笔画简化、部首简化、结构简化等。有些汉字在简化和繁体中的写法完全不同。</p>
+                    <h3>Key Differences</h3>
+                    <p>The main differences include stroke simplification, radical simplification, and structural simplification. Some characters have completely different forms between simplified and traditional versions.</p>
                 </div>
             </div>
         </div>
@@ -113,7 +113,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 汉字学习. All rights reserved.</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 汉字学习. All rights reserved.</p>
+                </div>
+                <div class="footer-external-links">
+                    <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer" class="external-link">
+                        <span class="link-icon">🔗</span>
+                        <span class="link-text">AI工具导航</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

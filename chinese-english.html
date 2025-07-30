@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中英对照 - Chinese-English Dictionary</title>
+    <title>Chinese-English Character Dictionary - Learn Character Meanings</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,24 +12,24 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>汉字学习</h1>
-                <span>Chinese Characters</span>
+                <h1>Chinese Characters</h1>
+                <span>Learning Platform</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="games.html" class="nav-link">游戏</a>
+                    <a href="games.html" class="nav-link">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a href="traditional-simplified.html" class="nav-link">简体繁体</a>
+                    <a href="traditional-simplified.html" class="nav-link">Traditional vs Simplified</a>
                 </li>
                 <li class="nav-item">
-                    <a href="chinese-english.html" class="nav-link active">中英对照</a>
+                    <a href="chinese-english.html" class="nav-link active">Dictionary</a>
                 </li>
                 <li class="nav-item">
-                    <a href="calligraphy.html" class="nav-link">书法</a>
+                    <a href="calligraphy.html" class="nav-link">Calligraphy</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -44,8 +44,8 @@
     <section class="hero hero-english">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">中英汉字对照</h1>
-                <p class="hero-subtitle">学习100个常用汉字的英文含义，加深对汉字理解</p>
+                <h1 class="hero-title">Chinese-English Character Dictionary</h1>
+                <p class="hero-subtitle">Learn the English meanings of 100 common Chinese characters</p>
             </div>
         </div>
     </section>
@@ -54,14 +54,14 @@
     <section class="dictionary-section">
         <div class="container">
             <div class="section-header">
-                <h2>100个常用汉字英译</h2>
-                <p>点击汉字查看详细含义和例句</p>
+                <h2>100 Common Characters with English Translations</h2>
+                <p>Click on characters to view detailed meanings and examples</p>
             </div>
             
             <div class="search-controls">
-                <input type="text" id="searchInput" placeholder="搜索汉字或英文..." class="search-input">
-                <button class="btn btn-primary" onclick="searchCharacters()">搜索</button>
-                <button class="btn btn-secondary" onclick="clearSearch()">清除</button>
+                <input type="text" id="searchInput" placeholder="Search characters or English..." class="search-input">
+                <button class="btn btn-primary" onclick="searchCharacters()">Search</button>
+                <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
             </div>
 
             <div class="dictionary-grid" id="dictionaryGrid">
@@ -84,29 +84,29 @@
     <section class="tips-section">
         <div class="container">
             <div class="section-header">
-                <h2>学习技巧</h2>
-                <p>帮助你更好地记忆和理解汉字</p>
+                <h2>Learning Tips</h2>
+                <p>Help you better memorize and understand Chinese characters</p>
             </div>
             <div class="tips-grid">
                 <div class="tip-card">
                     <div class="tip-icon">📝</div>
-                    <h3>多写多练</h3>
-                    <p>通过反复书写来加深对汉字结构和笔画的记忆</p>
+                    <h3>Practice Writing</h3>
+                    <p>Reinforce memory of character structure and strokes through repeated writing</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🔤</div>
-                    <h3>联想记忆</h3>
-                    <p>将汉字的形状与英文含义建立联系，便于记忆</p>
+                    <h3>Associative Memory</h3>
+                    <p>Connect character shapes with English meanings for easier memorization</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">📚</div>
-                    <h3>语境学习</h3>
-                    <p>在句子和短语中学习汉字，理解其实际用法</p>
+                    <h3>Context Learning</h3>
+                    <p>Learn characters in sentences and phrases to understand practical usage</p>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">🎯</div>
-                    <h3>分类记忆</h3>
-                    <p>按照主题或部首对汉字进行分类，系统化学习</p>
+                    <h3>Categorized Learning</h3>
+                    <p>Organize characters by themes or radicals for systematic learning</p>
                 </div>
             </div>
         </div>
@@ -135,7 +135,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 汉字学习. All rights reserved.</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 汉字学习. All rights reserved.</p>
+                </div>
+                <div class="footer-external-links">
+                    <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer" class="external-link">
+                        <span class="link-icon">🔗</span>
+                        <span class="link-text">AI工具导航</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

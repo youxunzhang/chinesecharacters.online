@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>汉字游戏 - Chinese Characters Games</title>
+    <title>Chinese Characters Games - Interactive Learning</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,24 +12,24 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>汉字学习</h1>
-                <span>Chinese Characters</span>
+                <h1>Chinese Characters</h1>
+                <span>Learning Platform</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="games.html" class="nav-link active">游戏</a>
+                    <a href="games.html" class="nav-link active">Games</a>
                 </li>
                 <li class="nav-item">
-                    <a href="traditional-simplified.html" class="nav-link">简体繁体</a>
+                    <a href="traditional-simplified.html" class="nav-link">Traditional vs Simplified</a>
                 </li>
                 <li class="nav-item">
-                    <a href="chinese-english.html" class="nav-link">中英对照</a>
+                    <a href="chinese-english.html" class="nav-link">Dictionary</a>
                 </li>
                 <li class="nav-item">
-                    <a href="calligraphy.html" class="nav-link">书法</a>
+                    <a href="calligraphy.html" class="nav-link">Calligraphy</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -44,8 +44,8 @@
     <section class="hero hero-games">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">汉字游戏中心</h1>
-                <p class="hero-subtitle">通过有趣的游戏学习汉字，让学习变得轻松愉快</p>
+                <h1 class="hero-title">Chinese Characters Game Center</h1>
+                <p class="hero-subtitle">Learn Chinese characters through fun and engaging games</p>
             </div>
         </div>
     </section>
@@ -54,51 +54,51 @@
     <section class="games-section">
         <div class="container">
             <div class="section-header">
-                <h2>选择你喜欢的游戏</h2>
-                <p>每个游戏都有不同的学习重点，帮助你更好地掌握汉字</p>
+                <h2>Choose Your Favorite Game</h2>
+                <p>Each game focuses on different learning aspects to help you master Chinese characters</p>
             </div>
             
             <div class="games-grid">
                 <!-- Memory Game -->
                 <div class="game-card" id="memoryGame">
                     <div class="game-icon">🧠</div>
-                    <h3>汉字记忆游戏</h3>
-                    <p>通过翻牌配对的方式，训练汉字记忆能力</p>
-                    <button class="btn btn-primary" onclick="startMemoryGame()">开始游戏</button>
+                    <h3>Character Memory Game</h3>
+                    <p>Train your memory by matching pairs of Chinese characters</p>
+                    <button class="btn btn-primary" onclick="startMemoryGame()">Start Game</button>
                 </div>
 
                 <!-- Word Search -->
                 <div class="game-card" id="wordSearch">
                     <div class="game-icon">🔍</div>
-                    <h3>汉字找找看</h3>
-                    <p>在汉字网格中找出指定的汉字</p>
-                    <button class="btn btn-primary" onclick="startWordSearch()">开始游戏</button>
+                    <h3>Character Search</h3>
+                    <p>Find specific characters in a grid of Chinese characters</p>
+                    <button class="btn btn-primary" onclick="startWordSearch()">Start Game</button>
                 </div>
 
                 <!-- Character Quiz -->
                 <div class="game-card" id="characterQuiz">
                     <div class="game-icon">❓</div>
-                    <h3>汉字小测验</h3>
-                    <p>测试你对汉字含义的理解</p>
-                    <button class="btn btn-primary" onclick="startCharacterQuiz()">开始游戏</button>
+                    <h3>Character Quiz</h3>
+                    <p>Test your understanding of character meanings</p>
+                    <button class="btn btn-primary" onclick="startCharacterQuiz()">Start Game</button>
                 </div>
 
                 <!-- Stroke Order -->
                 <div class="game-card" id="strokeOrder">
                     <div class="game-icon">✍️</div>
-                    <h3>笔画顺序</h3>
-                    <p>学习汉字的正确书写顺序</p>
-                    <button class="btn btn-primary" onclick="startStrokeOrder()">开始游戏</button>
+                    <h3>Stroke Order</h3>
+                    <p>Learn the correct writing sequence for Chinese characters</p>
+                    <button class="btn btn-primary" onclick="startStrokeOrder()">Start Game</button>
                 </div>
             </div>
 
             <!-- Game Area -->
             <div class="game-area" id="gameArea" style="display: none;">
                 <div class="game-header">
-                    <h3 id="gameTitle">游戏标题</h3>
+                    <h3 id="gameTitle">Game Title</h3>
                     <div class="game-controls">
-                        <span id="gameScore">得分: 0</span>
-                        <button class="btn btn-secondary" onclick="closeGame()">返回</button>
+                        <span id="gameScore">Score: 0</span>
+                        <button class="btn btn-secondary" onclick="closeGame()">Back</button>
                     </div>
                 </div>
                 <div class="game-content" id="gameContent">
@@ -113,25 +113,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>汉字学习</h3>
-                    <p>探索中华文化的精髓，通过汉字了解中国</p>
+                    <h3>Chinese Characters Learning</h3>
+                    <p>Explore the essence of Chinese culture through the study of characters</p>
                 </div>
                 <div class="footer-section">
-                    <h4>快速链接</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="traditional-simplified.html">简体繁体</a></li>
-                        <li><a href="chinese-english.html">中英对照</a></li>
-                        <li><a href="calligraphy.html">书法艺术</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="traditional-simplified.html">Traditional vs Simplified</a></li>
+                        <li><a href="chinese-english.html">Dictionary</a></li>
+                        <li><a href="calligraphy.html">Calligraphy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>关于我们</h4>
-                    <p>致力于推广中文学习，让更多人了解汉字文化</p>
+                    <h4>About Us</h4>
+                    <p>Dedicated to promoting Chinese language learning and cultural understanding</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 汉字学习. All rights reserved.</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Chinese Characters Learning. All rights reserved.</p>
+                </div>
+                <div class="footer-external-links">
+                    <a href="https://www.seodog.cn" target="_blank" rel="noopener noreferrer" class="external-link">
+                        <span class="link-icon">🔗</span>
+                        <span class="link-text">AI Tools Directory</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
