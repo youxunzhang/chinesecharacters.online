@@ -1387,3 +1387,124 @@ window.addEventListener('click', function(event) {
         calligraphyModal.style.display = 'none';
     }
 }); 
+
+// Floating Bookmark, Share, and Page Summary
+(function() {
+    function getPageKey() {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        return 'bookmark:' + (canonical ? canonical.getAttribute('href') : location.pathname);
+    }
+
+    function isBookmarked() {
+        try { return localStorage.getItem(getPageKey()) === '1'; } catch(e) { return false; }
+    }
+
+    function setBookmarked(active) {
+        try {
+            if (active) localStorage.setItem(getPageKey(), '1');
+            else localStorage.removeItem(getPageKey());
+        } catch(e) {}
+    }
+
+    function updateBookmarkButton(btn) {
+        if (!btn) return;
+        var active = isBookmarked();
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', String(active));
+        btn.innerHTML = active ? '★ 已收藏' : '☆ 收藏';
+        btn.title = active ? '取消收藏' : '收藏此页';
+    }
+
+    function openShare(url) {
+        var w = 640, h = 480;
+        var y = window.top.outerHeight / 2 + window.top.screenY - (h / 2);
+        var x = window.top.outerWidth / 2 + window.top.screenX - (w / 2);
+        window.open(url, '_blank', 'width=' + w + ',height=' + h + ',left=' + x + ',top=' + y);
+    }
+
+    function buildShareUrls() {
+        var pageUrl = encodeURIComponent(location.href);
+        var titleMeta = document.querySelector('meta[property="og:title"], meta[name="twitter:title"]');
+        var text = encodeURIComponent(titleMeta ? titleMeta.getAttribute('content') : document.title);
+        return {
+            facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl,
+            twitter: 'https://twitter.com/intent/tweet?url=' + pageUrl + '&text=' + text,
+            linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl,
+            reddit: 'https://www.reddit.com/submit?url=' + pageUrl + '&title=' + text,
+            whatsapp: 'https://api.whatsapp.com/send?text=' + text + '%20' + pageUrl
+        };
+    }
+
+    function renderFloatingActions() {
+        if (document.querySelector('.floating-actions')) return;
+        var container = document.createElement('div');
+        container.className = 'floating-actions';
+
+        var bookmarkBtn = document.createElement('button');
+        bookmarkBtn.className = 'bookmark-btn';
+        bookmarkBtn.type = 'button';
+        bookmarkBtn.setAttribute('aria-label', '收藏此页');
+        updateBookmarkButton(bookmarkBtn);
+        bookmarkBtn.addEventListener('click', function() {
+            var nextState = !isBookmarked();
+            setBookmarked(nextState);
+            updateBookmarkButton(bookmarkBtn);
+        });
+        container.appendChild(bookmarkBtn);
+
+        document.body.appendChild(container);
+    }
+
+    function renderShareSection() {
+        var shareAnchors = document.querySelectorAll('[data-share-section]');
+        if (!shareAnchors.length) return;
+        var urls = buildShareUrls();
+        shareAnchors.forEach(function(anchor) {
+            var section = document.createElement('section');
+            section.className = 'share-section';
+            section.innerHTML = '\n                <div class="container">\n                    <div class="share-bar">\n                        <span class="share-label">Share:</span>\n                        <div class="share-buttons">\n                            <a class="share-btn facebook" href="#" data-net="facebook">Facebook</a>\n                            <a class="share-btn twitter" href="#" data-net="twitter">Twitter</a>\n                            <a class="share-btn linkedin" href="#" data-net="linkedin">LinkedIn</a>\n                            <a class="share-btn reddit" href="#" data-net="reddit">Reddit</a>\n                            <a class="share-btn whatsapp" href="#" data-net="whatsapp">WhatsApp</a>\n                        </div>\n                    </div>\n                </div>';
+            if (anchor.parentNode) anchor.parentNode.insertBefore(section, anchor);
+            section.querySelectorAll('.share-btn').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var net = btn.getAttribute('data-net');
+                    var url = urls[net];
+                    if (navigator.share) {
+                        navigator.share({ title: document.title, url: location.href }).catch(function() { openShare(url); });
+                    } else {
+                        openShare(url);
+                    }
+                });
+            });
+        });
+    }
+
+    function renderPageSummary() {
+        var summaryAnchors = document.querySelectorAll('[data-summary-section]');
+        if (!summaryAnchors.length) return;
+        var path = location.pathname;
+        var textMeta = document.querySelector('meta[name="description"]');
+        var text = textMeta ? textMeta.getAttribute('content') : '';
+        if (!text) {
+            if (path.includes('games')) text = 'Interactive games to learn Chinese characters: memory, search, quiz, and stroke order practice.';
+            else if (path.includes('traditional-simplified')) text = 'Compare traditional and simplified Chinese characters, understand differences and history with examples.';
+            else if (path.includes('chinese-english')) text = 'Chinese-English dictionary of 100 common characters with meanings, pronunciations, and examples.';
+            else if (path.includes('calligraphy')) text = 'Learn Chinese calligraphy with stroke order guides, regular script practice, and cultural background.';
+            else if (path.includes('chinese-time-characters')) text = 'Master Chinese time characters and vocabulary including year, month, day, hour, minute, and seasons.';
+            else if (path.includes('time-learning-tools')) text = 'Use interactive tools to learn Chinese time vocabulary: converter, quiz, calendar practice, and writing.';
+            else text = 'Learn Chinese characters online with interactive tools, comparisons, dictionary, and calligraphy practice.';
+        }
+        summaryAnchors.forEach(function(anchor) {
+            var section = document.createElement('section');
+            section.className = 'page-summary';
+            section.innerHTML = '\n                <div class="container">\n                    <div class="summary-box">\n                        <h2>Page Summary</h2>\n                        <p>' + text + '</p>\n                    </div>\n                </div>';
+            if (anchor.parentNode) anchor.parentNode.insertBefore(section, anchor);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        renderFloatingActions();
+        renderShareSection();
+        renderPageSummary();
+    });
+})();
