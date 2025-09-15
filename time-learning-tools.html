@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Chinese time learning tools: time converter, calendar practice, time quiz, and writing practice. Master Chinese time vocabulary with online exercises and games.">
+    <meta name="keywords" content="Chinese time learning tools, online Chinese time practice, Chinese time converter, Chinese calendar practice, Chinese time quiz, Chinese time writing practice, interactive Chinese time learning, Chinese time character generator, free Chinese time resources, Chinese time input method, Chinese time character practice, Chinese time course online, Chinese time writing exercises, Chinese time vocabulary games, Chinese time flashcards online">
+    <meta name="author" content="Chinese Characters Learning Platform">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Chinese Time Learning Tools - Interactive Practice & Games">
+    <meta property="og:description" content="Master Chinese time vocabulary with interactive tools, games, and practice exercises.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chinesecharacters.online/time-learning-tools.html">
+    <link rel="canonical" href="https://chinesecharacters.online/time-learning-tools.html">
+    <title>Chinese Time Learning Tools - Interactive Practice & Games | 中文时间学习工具</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
+     crossorigin="anonymous"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Chinese Time Learning Tools",
+      "description": "Interactive web application for learning Chinese time vocabulary, characters, and expressions through games, quizzes, and practice exercises",
+      "url": "https://chinesecharacters.online/time-learning-tools.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Time Converter Tool",
+        "Calendar Practice",
+        "Time Vocabulary Quiz",
+        "Writing Practice",
+        "Interactive Games",
+        "Progress Tracking"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Chinese Characters</h1>
+                <span>Learning Platform</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="games.html" class="nav-link">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a href="traditional-simplified.html" class="nav-link">Traditional vs Simplified</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chinese-english.html" class="nav-link">Dictionary</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calligraphy.html" class="nav-link">Calligraphy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chinese-time-characters.html" class="nav-link">Time Characters</a>
+                </li>
+                <li class="nav-item">
+                    <a href="time-learning-tools.html" class="nav-link active">Time Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Site Map</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-tools">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Chinese Time Learning Tools</h1>
+                <p class="hero-subtitle">Interactive tools and games to master Chinese time vocabulary and expressions</p>
+                <div class="hero-buttons">
+                    <a href="#time-converter" class="btn btn-primary">Time Converter</a>
+                    <a href="#time-quiz" class="btn btn-secondary">Take Quiz</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-characters">
+                    <span class="char">🕐</span>
+                    <span class="char">📅</span>
+                    <span class="char">⏰</span>
+                    <span class="char">📆</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Converter Tool -->
+    <section class="time-converter-section" id="time-converter">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chinese Time Converter</h2>
+                <p>Convert between different time formats and learn Chinese time expressions</p>
+            </div>
+            
+            <div class="converter-tool">
+                <div class="converter-input">
+                    <h3>Input Time</h3>
+                    <div class="input-group">
+                        <label>Hour:</label>
+                        <input type="number" id="inputHour" min="0" max="23" value="14">
+                    </div>
+                    <div class="input-group">
+                        <label>Minute:</label>
+                        <input type="number" id="inputMinute" min="0" max="59" value="30">
+                    </div>
+                    <button class="btn btn-primary" onclick="convertTime()">Convert</button>
+                </div>
+                
+                <div class="converter-output">
+                    <h3>Chinese Time Expression</h3>
+                    <div class="output-display">
+                        <div class="chinese-time" id="chineseTime">下午二时三十分</div>
+                        <div class="pinyin-time" id="pinyinTime">xià wǔ èr shí sān shí fēn</div>
+                        <div class="english-time" id="englishTime">2:30 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Quiz Section -->
+    <section class="time-quiz-section" id="time-quiz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chinese Time Vocabulary Quiz</h2>
+                <p>Test your knowledge of Chinese time characters and expressions</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h3 id="quizQuestion">What does 年 mean?</h3>
+                    <div class="quiz-progress">
+                        <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                    </div>
+                </div>
+                
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="selectAnswer('A')">A) Month</button>
+                    <button class="quiz-option" onclick="selectAnswer('B')">B) Year</button>
+                    <button class="quiz-option" onclick="selectAnswer('C')">C) Day</button>
+                    <button class="quiz-option" onclick="selectAnswer('D')">D) Hour</button>
+                </div>
+                
+                <div class="quiz-feedback" id="quizFeedback" style="display: none;">
+                    <p id="feedbackText"></p>
+                    <button class="btn btn-primary" onclick="nextQuestion()">Next Question</button>
+                </div>
+                
+                <div class="quiz-results" id="quizResults" style="display: none;">
+                    <h3>Quiz Complete!</h3>
+                    <p>Your Score: <span id="finalScore">0</span>/10</p>
+                    <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Practice Section -->
+    <section class="calendar-practice-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chinese Calendar Practice</h2>
+                <p>Learn Chinese date expressions and calendar vocabulary</p>
+            </div>
+            
+            <div class="calendar-tool">
+                <div class="calendar-display">
+                    <h3>Today's Date in Chinese</h3>
+                    <div class="date-display">
+                        <div class="chinese-date" id="chineseDate">二零二四年十二月十九日</div>
+                        <div class="pinyin-date" id="pinyinDate">èr líng èr sì nián shí èr yuè shí jiǔ rì</div>
+                        <div class="english-date" id="englishDate">December 19, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="calendar-practice">
+                    <h3>Practice Writing Dates</h3>
+                    <div class="practice-input">
+                        <input type="date" id="practiceDate" onchange="practiceDate()">
+                        <button class="btn btn-secondary" onclick="generateRandomDate()">Random Date</button>
+                    </div>
+                    <div class="practice-output" id="practiceOutput">
+                        <p>Select a date to see the Chinese expression</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Practice Section -->
+    <section class="writing-practice-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Time Character Writing Practice</h2>
+                <p>Practice writing Chinese time characters with stroke order guides</p>
+            </div>
+            
+            <div class="writing-tools">
+                <div class="character-selector">
+                    <h3>Select Character to Practice</h3>
+                    <div class="character-buttons">
+                        <button class="char-btn" onclick="selectChar('年')">年</button>
+                        <button class="char-btn" onclick="selectChar('月')">月</button>
+                        <button class="char-btn" onclick="selectChar('日')">日</button>
+                        <button class="char-btn" onclick="selectChar('时')">时</button>
+                        <button class="char-btn" onclick="selectChar('分')">分</button>
+                        <button class="char-btn" onclick="selectChar('秒')">秒</button>
+                    </div>
+                </div>
+                
+                <div class="writing-area">
+                    <h3 id="selectedChar">Select a character above</h3>
+                    <div class="stroke-guide" id="strokeGuide">
+                        <p>Choose a character to see stroke order</p>
+                    </div>
+                    <div class="writing-canvas">
+                        <canvas id="writingCanvas" width="300" height="300"></canvas>
+                        <button class="btn btn-secondary" onclick="clearCanvas()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learning Progress</h2>
+                <p>Track your progress in mastering Chinese time vocabulary</p>
+            </div>
+            
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="charactersLearned">0</div>
+                    <div class="stat-label">Characters Learned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="quizScore">0%</div>
+                    <div class="stat-label">Average Quiz Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="practiceTime">0</div>
+                    <div class="stat-label">Minutes Practiced</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="streakDays">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Chinese Characters Learning</h3>
+                    <p>Explore the essence of Chinese culture through the study of characters</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="games.html">Learning Games</a></li>
+                        <li><a href="traditional-simplified.html">Traditional vs Simplified</a></li>
+                        <li><a href="chinese-english.html">Dictionary</a></li>
+                        <li><a href="calligraphy.html">Calligraphy</a></li>
+                        <li><a href="chinese-time-characters.html">Time Characters</a></li>
+                        <li><a href="time-learning-tools.html">Time Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Chinese Characters Learning. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Time Converter functionality
+        function convertTime() {
+            const hour = parseInt(document.getElementById('inputHour').value);
+            const minute = parseInt(document.getElementById('inputMinute').value);
+            
+            let chineseTime = '';
+            let pinyinTime = '';
+            let englishTime = '';
+            
+            // Convert hour
+            if (hour === 0) {
+                chineseTime += '零时';
+                pinyinTime += 'líng shí';
+                englishTime = '12:';
+            } else if (hour < 12) {
+                chineseTime += '上午' + getChineseNumber(hour) + '时';
+                pinyinTime += 'shàng wǔ ' + getPinyinNumber(hour) + ' shí';
+                englishTime = hour + ':';
+            } else if (hour === 12) {
+                chineseTime += '下午十二时';
+                pinyinTime += 'xià wǔ shí èr shí';
+                englishTime = '12:';
+            } else {
+                chineseTime += '下午' + getChineseNumber(hour - 12) + '时';
+                pinyinTime += 'xià wǔ ' + getPinyinNumber(hour - 12) + ' shí';
+                englishTime = (hour - 12) + ':';
+            }
+            
+            // Add minutes
+            if (minute > 0) {
+                chineseTime += getChineseNumber(minute) + '分';
+                pinyinTime += ' ' + getPinyinNumber(minute) + ' fēn';
+                englishTime += minute.toString().padStart(2, '0');
+            } else {
+                englishTime += '00';
+            }
+            
+            // Add AM/PM
+            if (hour < 12) {
+                englishTime += ' AM';
+            } else {
+                englishTime += ' PM';
+            }
+            
+            document.getElementById('chineseTime').textContent = chineseTime;
+            document.getElementById('pinyinTime').textContent = pinyinTime;
+            document.getElementById('englishTime').textContent = englishTime;
+        }
+        
+        function getChineseNumber(num) {
+            const numbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+            if (num <= 10) return numbers[num];
+            if (num < 20) return '十' + numbers[num - 10];
+            if (num < 60) {
+                const tens = Math.floor(num / 10);
+                const ones = num % 10;
+                if (ones === 0) return numbers[tens] + '十';
+                return numbers[tens] + '十' + numbers[ones];
+            }
+            return '';
+        }
+        
+        function getPinyinNumber(num) {
+            const pinyin = ['líng', 'yī', 'èr', 'sān', 'sì', 'wǔ', 'liù', 'qī', 'bā', 'jiǔ', 'shí'];
+            if (num <= 10) return pinyin[num];
+            if (num < 20) return 'shí ' + pinyin[num - 10];
+            if (num < 60) {
+                const tens = Math.floor(num / 10);
+                const ones = num % 10;
+                if (ones === 0) return pinyin[tens] + ' shí';
+                return pinyin[tens] + ' shí ' + pinyin[ones];
+            }
+            return '';
+        }
+        
+        // Quiz functionality
+        let currentQuizQuestion = 0;
+        let quizScore = 0;
+        const quizQuestions = [
+            {
+                question: "What does 年 mean?",
+                options: ["Month", "Year", "Day", "Hour"],
+                correct: "B"
+            },
+            {
+                question: "What does 月 mean?",
+                options: ["Year", "Month", "Day", "Week"],
+                correct: "B"
+            },
+            {
+                question: "What does 日 mean?",
+                options: ["Month", "Year", "Day", "Hour"],
+                correct: "C"
+            },
+            {
+                question: "What does 时 mean?",
+                options: ["Minute", "Second", "Hour", "Day"],
+                correct: "C"
+            },
+            {
+                question: "What does 分 mean?",
+                options: ["Hour", "Minute", "Second", "Day"],
+                correct: "B"
+            }
+        ];
+        
+        function selectAnswer(answer) {
+            const correct = quizQuestions[currentQuizQuestion].correct;
+            const feedback = document.getElementById('quizFeedback');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            if (answer === correct) {
+                quizScore++;
+                feedbackText.textContent = "Correct! Well done!";
+                feedbackText.style.color = "green";
+            } else {
+                feedbackText.textContent = `Incorrect. The correct answer is ${correct}.`;
+                feedbackText.style.color = "red";
+            }
+            
+            feedback.style.display = "block";
+        }
+        
+        function nextQuestion() {
+            currentQuizQuestion++;
+            if (currentQuizQuestion < quizQuestions.length) {
+                updateQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+        
+        function updateQuizQuestion() {
+            const question = quizQuestions[currentQuizQuestion];
+            document.getElementById('quizQuestion').textContent = question.question;
+            document.getElementById('currentQuestion').textContent = currentQuizQuestion + 1;
+            
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((option, index) => {
+                option.textContent = String.fromCharCode(65 + index) + ') ' + question.options[index];
+            });
+            
+            document.getElementById('quizFeedback').style.display = 'none';
+        }
+        
+        function showQuizResults() {
+            document.querySelector('.quiz-options').style.display = 'none';
+            document.getElementById('quizFeedback').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            document.getElementById('finalScore').textContent = quizScore;
+        }
+        
+        function restartQuiz() {
+            currentQuizQuestion = 0;
+            quizScore = 0;
+            document.querySelector('.quiz-options').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+            updateQuizQuestion();
+        }
+        
+        // Calendar practice
+        function practiceDate() {
+            const dateInput = document.getElementById('practiceDate').value;
+            if (dateInput) {
+                const date = new Date(dateInput);
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                
+                const chineseDate = getChineseDate(year, month, day);
+                document.getElementById('practiceOutput').innerHTML = `
+                    <div class="chinese-date">${chineseDate}</div>
+                    <div class="pinyin-date">${getPinyinDate(year, month, day)}</div>
+                    <div class="english-date">${date.toLocaleDateString()}</div>
+                `;
+            }
+        }
+        
+        function getChineseDate(year, month, day) {
+            return getChineseNumber(year) + '年' + getChineseNumber(month) + '月' + getChineseNumber(day) + '日';
+        }
+        
+        function getPinyinDate(year, month, day) {
+            return getPinyinNumber(year) + ' nián ' + getPinyinNumber(month) + ' yuè ' + getPinyinNumber(day) + ' rì';
+        }
+        
+        function generateRandomDate() {
+            const start = new Date(2020, 0, 1);
+            const end = new Date(2030, 11, 31);
+            const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            document.getElementById('practiceDate').value = randomDate.toISOString().split('T')[0];
+            practiceDate();
+        }
+        
+        // Writing practice
+        function selectChar(char) {
+            document.getElementById('selectedChar').textContent = `Practice: ${char}`;
+            document.getElementById('strokeGuide').innerHTML = `
+                <h4>Stroke Order for ${char}</h4>
+                <p>Click and drag on the canvas below to practice writing this character.</p>
+            `;
+        }
+        
+        function clearCanvas() {
+            const canvas = document.getElementById('writingCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            convertTime();
+            updateQuizQuestion();
+            
+            // Set today's date
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            
+            document.getElementById('chineseDate').textContent = getChineseDate(year, month, day);
+            document.getElementById('pinyinDate').textContent = getPinyinDate(year, month, day);
+            document.getElementById('englishDate').textContent = today.toLocaleDateString();
+        });
+    </script>
+</body>
+</html>

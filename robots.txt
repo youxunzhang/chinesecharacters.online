@@ -6,3 +6,4 @@ Sitemap: https://chinesecharacters.online/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
+
